@@ -2,7 +2,7 @@
 
 Web-сервис, который предоставляет программный интерфейс (API) для запуска кода на языке JavaScript через Node.js внутри Docker-контейнера.
 
-Эта версия ориентирована на Linux/Docker и максимально повторяет структуру `sandbox-python38` и `sandbox-gcc74`.
+Эта версия ориентирована на Linux/Docker.
 
 [Спецификация API](docs/specification.md)
 
@@ -24,7 +24,3 @@ curl -X POST http://localhost:9003/run \
   -H "Content-Type: application/json" \
   -d "{\"code\":\"console.log('Hello from JS')\"}"
 ```
-
-## Лицензия
-
-Распространяется под лицензией [MIT](LICENSE).
