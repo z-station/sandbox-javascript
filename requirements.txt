@@ -1,0 +1,7 @@
+Flask>=2.3,<3
+gunicorn>=21,<27
+marshmallow>=3.20,<3.22
+pytest>=7,<8
+pytest-mock>=3,<4
+Werkzeug>=2.3.7,<3
+blinker>=1.6.2,<1.8

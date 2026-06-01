@@ -1,0 +1,36 @@
+version: "3.3"
+
+services:
+
+  sandbox-javascript:
+    build:
+      context: ..
+      args:
+        - SANDBOX_USER_UID=999
+        - SANDBOX_DIR=/sandbox
+      dockerfile: ./docker/Dockerfile
+    container_name: sandbox-javascript
+    image: sandbox-javascript
+    volumes:
+      - ../src:/app/src
+      - ../tests:/app/tests
+      - import:/sandbox/import:ro
+    ports:
+      - "9003:9003"
+    networks:
+      - localhost
+    environment:
+      - SANDBOX_USER_UID=999
+      - SANDBOX_DIR=/sandbox
+      - SANDBOX_TIMEOUT=5
+    restart: on-failure
+    command: gunicorn --pythonpath '/app/src' --bind 0:9003 app.main:app --reload -w 1
+
+networks:
+  localhost:
+    external: true
+
+volumes:
+  import:
+    external: true
+
