@@ -2,15 +2,15 @@ version: "3.3"
 
 services:
 
-  sandbox-javascript:
+  sandbox-node20:
     build:
       context: ..
       args:
         - SANDBOX_USER_UID=999
         - SANDBOX_DIR=/sandbox
       dockerfile: ./docker/Dockerfile
-    container_name: sandbox-javascript
-    image: sandbox-javascript
+    container_name: sandbox-node20
+    image: sandbox-node20
     volumes:
       - ../src:/app/src
       - ../tests:/app/tests
