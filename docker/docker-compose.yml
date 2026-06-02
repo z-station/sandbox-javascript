@@ -16,7 +16,7 @@ services:
       - ../tests:/app/tests
       - import:/sandbox/import:ro
     ports:
-      - "9003:9003"
+      - "9010:9010"
     networks:
       - localhost
     environment:
@@ -24,7 +24,7 @@ services:
       - SANDBOX_DIR=/sandbox
       - SANDBOX_TIMEOUT=5
     restart: on-failure
-    command: gunicorn --pythonpath '/app/src' --bind 0:9003 app.main:app --reload -w 1
+    command: gunicorn --pythonpath '/app/src' --bind 0:9010 app.main:app --reload -w 1
 
 networks:
   localhost:
