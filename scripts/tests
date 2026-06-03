@@ -1,2 +1,2 @@
 #!/bin/bash
-docker exec -it sandbox-javascript pytest -vv -p no:cacheprovider /app/src
+docker exec -it sandbox-node20 pytest -vv -p no:cacheprovider /app/src

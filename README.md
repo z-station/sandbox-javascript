@@ -1,26 +1,17 @@
-# JavaScript Node.js service
 
-Web-сервис, который предоставляет программный интерфейс (API) для запуска кода на языке JavaScript через Node.js внутри Docker-контейнера.
-
-Эта версия ориентирована на Linux/Docker.
-
+# Node 20 service
+Web-сервис, который предоставляет программный интерфейс (API) для запуска кода на языке JavaScript через Node.js посредством HTTP-запросов.
 [Спецификация API](docs/specification.md)
 
-## Запуск
+### Контакты
+Официальный сайт: [cappa.math.csu.ru](http://cappa.math.csu.ru/) \
+Старший разработчик: Закиров Азат, контакты: zakirmalay@gmail.com, [vk](https://vk.com/60braids) \
+Разработчик модуля: [Степан Лохматихин](https://github.com/StepanLokhmatikhin)
 
-```bash
-cd scripts
-./up
-```
+По вопросам сотрудничества: mig19@mail.ru
 
-Сервис будет доступен на порту `9003`.
+При поддержке:
+ * [Математический факультет ЧелГУ](http://math.csu.ru)
 
-## Проверка
-
-```bash
-curl http://localhost:9003/health
-
-curl -X POST http://localhost:9003/run \
-  -H "Content-Type: application/json" \
-  -d "{\"code\":\"console.log('Hello from JS')\"}"
-```
+### Лицензия
+Распространяется под лицензией [MIT](LICENSE).
